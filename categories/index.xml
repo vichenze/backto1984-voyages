@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Back to 1984 — Voyages</title>
+    <link>http://voyages.backto1984.com/categories/</link>
+    <description>Recent content in Categories on Back to 1984 — Voyages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>hello [at] backto1984.com</copyright>
+    <lastBuildDate>Sun, 14 Aug 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://voyages.backto1984.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Carnet De Voyage en Islande</title>
+      <link>http://voyages.backto1984.com/categories/carnet-de-voyage-en-islande/</link>
+      <pubDate>Sun, 14 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://voyages.backto1984.com/categories/carnet-de-voyage-en-islande/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>De Brest À Édimbourg</title>
+      <link>http://voyages.backto1984.com/categories/de-brest-%C3%A0-%C3%A9dimbourg/</link>
+      <pubDate>Thu, 24 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://voyages.backto1984.com/categories/de-brest-%C3%A0-%C3%A9dimbourg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Journal De Bord Transatlantique</title>
+      <link>http://voyages.backto1984.com/categories/journal-de-bord-transatlantique/</link>
+      <pubDate>Sun, 06 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://voyages.backto1984.com/categories/journal-de-bord-transatlantique/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>La Corse Puis Le Belem</title>
+      <link>http://voyages.backto1984.com/categories/la-corse-puis-le-belem/</link>
+      <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://voyages.backto1984.com/categories/la-corse-puis-le-belem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>La Mer Baltique Sur Le Belem</title>
+      <link>http://voyages.backto1984.com/categories/la-mer-baltique-sur-le-belem/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://voyages.backto1984.com/categories/la-mer-baltique-sur-le-belem/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
