@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Back to 1984 — Voyages</title>
@@ -6,40 +6,31 @@
     <description>Recent content in Categories on Back to 1984 — Voyages</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>hello [at] backto1984.com</copyright>
-    <lastBuildDate>Sun, 14 Aug 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://voyages.backto1984.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Carnet De Voyage en Islande</title>
-      <link>http://voyages.backto1984.com/categories/carnet-de-voyage-en-islande/</link>
-      <pubDate>Sun, 14 Aug 2016 00:00:00 +0000</pubDate>
+      <title>Sur les traces de Robert-Louis Stevenson</title>
+      <link>http://voyages.backto1984.com/categories/sur-les-traces-de-robert-louis-stevenson/</link>
+      <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://voyages.backto1984.com/categories/carnet-de-voyage-en-islande/</guid>
+      <guid>http://voyages.backto1984.com/categories/sur-les-traces-de-robert-louis-stevenson/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>De Brest À Édimbourg</title>
-      <link>http://voyages.backto1984.com/categories/de-brest-%C3%A0-%C3%A9dimbourg/</link>
-      <pubDate>Thu, 24 Aug 2017 00:00:00 +0000</pubDate>
+      <title>La mer Baltique sur le Belem</title>
+      <link>http://voyages.backto1984.com/categories/la-mer-baltique-sur-le-belem/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://voyages.backto1984.com/categories/de-brest-%C3%A0-%C3%A9dimbourg/</guid>
+      <guid>http://voyages.backto1984.com/categories/la-mer-baltique-sur-le-belem/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Journal De Bord Transatlantique</title>
-      <link>http://voyages.backto1984.com/categories/journal-de-bord-transatlantique/</link>
-      <pubDate>Sun, 06 Sep 2015 00:00:00 +0000</pubDate>
-      
-      <guid>http://voyages.backto1984.com/categories/journal-de-bord-transatlantique/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>La Corse Puis Le Belem</title>
+      <title>La Corse puis le Belem</title>
       <link>http://voyages.backto1984.com/categories/la-corse-puis-le-belem/</link>
       <pubDate>Thu, 20 Sep 2018 00:00:00 +0000</pubDate>
       
@@ -48,11 +39,29 @@
     </item>
     
     <item>
-      <title>La Mer Baltique Sur Le Belem</title>
-      <link>http://voyages.backto1984.com/categories/la-mer-baltique-sur-le-belem/</link>
-      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      <title>De Brest à Édimbourg</title>
+      <link>http://voyages.backto1984.com/categories/de-brest-%C3%A0-%C3%A9dimbourg/</link>
+      <pubDate>Thu, 24 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://voyages.backto1984.com/categories/la-mer-baltique-sur-le-belem/</guid>
+      <guid>http://voyages.backto1984.com/categories/de-brest-%C3%A0-%C3%A9dimbourg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Carnet de voyage en Islande</title>
+      <link>http://voyages.backto1984.com/categories/carnet-de-voyage-en-islande/</link>
+      <pubDate>Sun, 14 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://voyages.backto1984.com/categories/carnet-de-voyage-en-islande/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Journal de bord transatlantique</title>
+      <link>http://voyages.backto1984.com/categories/journal-de-bord-transatlantique/</link>
+      <pubDate>Sun, 06 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://voyages.backto1984.com/categories/journal-de-bord-transatlantique/</guid>
       <description></description>
     </item>
     

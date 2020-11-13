@@ -1,9 +1,99 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://voyages.backto1984.com/</loc>
+    <lastmod>2020-08-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyages.backto1984.com/categories/</loc>
+    <lastmod>2020-08-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyages.backto1984.com/post/stevenson/j13/</loc>
+    <lastmod>2020-08-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyages.backto1984.com/post/</loc>
+    <lastmod>2020-08-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyages.backto1984.com/categories/sur-les-traces-de-robert-louis-stevenson/</loc>
+    <lastmod>2020-08-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyages.backto1984.com/post/stevenson/j12/</loc>
+    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyages.backto1984.com/post/stevenson/j11/</loc>
+    <lastmod>2020-08-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyages.backto1984.com/post/stevenson/j10/</loc>
+    <lastmod>2020-08-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyages.backto1984.com/post/stevenson/j9/</loc>
+    <lastmod>2020-08-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyages.backto1984.com/post/stevenson/j8/</loc>
+    <lastmod>2020-08-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyages.backto1984.com/post/stevenson/j7/</loc>
+    <lastmod>2020-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyages.backto1984.com/post/stevenson/j6/</loc>
+    <lastmod>2020-08-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyages.backto1984.com/post/stevenson/j5/</loc>
+    <lastmod>2020-08-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyages.backto1984.com/post/stevenson/j4/</loc>
+    <lastmod>2020-08-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyages.backto1984.com/post/stevenson/j3/</loc>
+    <lastmod>2020-08-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyages.backto1984.com/post/stevenson/j2/</loc>
+    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyages.backto1984.com/post/stevenson/j1/</loc>
+    <lastmod>2020-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://voyages.backto1984.com/post/baltique/suede/</loc>
+    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyages.backto1984.com/categories/la-mer-baltique-sur-le-belem/</loc>
     <lastmod>2019-07-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -63,6 +153,11 @@
   </url>
   
   <url>
+    <loc>http://voyages.backto1984.com/categories/la-corse-puis-le-belem/</loc>
+    <lastmod>2018-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://voyages.backto1984.com/post/corse/j11/</loc>
     <lastmod>2018-09-19T00:00:00+00:00</lastmod>
   </url>
@@ -115,6 +210,11 @@
   <url>
     <loc>http://voyages.backto1984.com/post/corse/j1/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://voyages.backto1984.com/categories/de-brest-%C3%A0-%C3%A9dimbourg/</loc>
+    <lastmod>2017-08-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -208,6 +308,11 @@
   </url>
   
   <url>
+    <loc>http://voyages.backto1984.com/categories/carnet-de-voyage-en-islande/</loc>
+    <lastmod>2016-08-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://voyages.backto1984.com/post/islande/islande-j13/</loc>
     <lastmod>2016-08-14T00:00:00+00:00</lastmod>
   </url>
@@ -278,6 +383,11 @@
   </url>
   
   <url>
+    <loc>http://voyages.backto1984.com/categories/journal-de-bord-transatlantique/</loc>
+    <lastmod>2015-09-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://voyages.backto1984.com/post/cargo/cargo-j11/</loc>
     <lastmod>2015-08-18T00:00:00+00:00</lastmod>
   </url>
@@ -338,56 +448,7 @@
   </url>
   
   <url>
-    <loc>http://voyages.backto1984.com/</loc>
-    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://voyages.backto1984.com/categories/carnet-de-voyage-en-islande/</loc>
-    <lastmod>2016-08-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://voyages.backto1984.com/categories/</loc>
-    <lastmod>2016-08-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://voyages.backto1984.com/categories/de-brest-%C3%A0-%C3%A9dimbourg/</loc>
-    <lastmod>2017-08-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://voyages.backto1984.com/categories/journal-de-bord-transatlantique/</loc>
-    <lastmod>2015-09-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://voyages.backto1984.com/categories/la-corse-puis-le-belem/</loc>
-    <lastmod>2018-09-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://voyages.backto1984.com/categories/la-mer-baltique-sur-le-belem/</loc>
-    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://voyages.backto1984.com/post/</loc>
-    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://voyages.backto1984.com/tags/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>
