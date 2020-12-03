@@ -18,11 +18,14 @@
 
     
     <link href="http://voyages.backto1984.com/css/clean-blog.css" rel="stylesheet">
-    <link href="http://voyages.backto1984.com/css/nanogallery2.min.css" rel="stylesheet">
 
     
     
     
+
+    <script src="http://voyages.backto1984.comjs/jquery.min.js"></script>
+	<script src="http://voyages.backto1984.comjs/bootstrap.min.js"></script>
+	<script src="http://voyages.backto1984.comjs/clean-blog.js"></script>
 </head>
 
 <body>
@@ -87,70 +90,7 @@ Langogne tout comme Pradelles est traversée par une route nationale. Mais alors
     Photos<br />
     <small>(cliquez pour agrandir)</small>
 </h4>
-<div id="gallery" data-nanogallery2 = '{
-    "thumbnailHeight": 200,
-    "thumbnailWidth": "auto",
-    "thumbnailLabel": { "display": false },
-    "thumbnailBorderHorizontal": 0,
-    "thumbnailBorderVertical": 0,
-    "thumbnailGutterWidth": 1,
-    "thumbnailGutterHeight": 1,
-    "imageTransition": "slideAppear",
-    "viewerFullscreen": true,
-    "viewerToolbar": { "display": false },
-    "viewerTools": { "topRight": "zoomButton, fullscreenButton, closeButton", "topLeft": "pageCounter" }
-  }'>
-        
-            <a href="/images/stevenson/j4/gallery/IMG_2967_DxO.jpg" data-ngthumb="/images/stevenson/j4/gallery/small/IMG_2967_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j4/gallery/IMG_2974_DxO.jpg" data-ngthumb="/images/stevenson/j4/gallery/small/IMG_2974_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j4/gallery/IMG_2975_DxO.jpg" data-ngthumb="/images/stevenson/j4/gallery/small/IMG_2975_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j4/gallery/IMG_2976_DxO.jpg" data-ngthumb="/images/stevenson/j4/gallery/small/IMG_2976_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j4/gallery/IMG_2982_DxO.jpg" data-ngthumb="/images/stevenson/j4/gallery/small/IMG_2982_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j4/gallery/IMG_2991_DxO.jpg" data-ngthumb="/images/stevenson/j4/gallery/small/IMG_2991_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j4/gallery/IMG_2996_DxO.jpg" data-ngthumb="/images/stevenson/j4/gallery/small/IMG_2996_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j4/gallery/IMG_3003_DxO.jpg" data-ngthumb="/images/stevenson/j4/gallery/small/IMG_3003_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j4/gallery/IMG_3004_DxO.jpg" data-ngthumb="/images/stevenson/j4/gallery/small/IMG_3004_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j4/gallery/IMG_3007_DxO.jpg" data-ngthumb="/images/stevenson/j4/gallery/small/IMG_3007_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j4/gallery/IMG_3010_DxO.jpg" data-ngthumb="/images/stevenson/j4/gallery/small/IMG_3010_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j4/gallery/IMG_3011_DxO.jpg" data-ngthumb="/images/stevenson/j4/gallery/small/IMG_3011_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j4/gallery/IMG_3013_DxO.jpg" data-ngthumb="/images/stevenson/j4/gallery/small/IMG_3013_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j4/gallery/IMG_3016_DxO.jpg" data-ngthumb="/images/stevenson/j4/gallery/small/IMG_3016_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j4/gallery/IMG_3022_DxO.jpg" data-ngthumb="/images/stevenson/j4/gallery/small/IMG_3022_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j4/gallery/IMG_3026_DxO.jpg" data-ngthumb="/images/stevenson/j4/gallery/small/IMG_3026_DxO.jpg"></a>
-        
-        
-</div>
-
+<div id="flickr-gallery" data-album-id="72157717066584418"></div>
 
 
 				</div>
@@ -212,18 +152,6 @@ Langogne tout comme Pradelles est traversée par une route nationale. Mais alors
 				</div>
 		</footer>
 
-		
-		<script src="http://voyages.backto1984.com/js/jquery.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/bootstrap.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/clean-blog.js"></script>
-
-		<script type="text/javascript" src="http://voyages.backto1984.com/js/jquery.nanogallery2.core.min.js"></script>
-
-
 		<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 
 <script>
@@ -241,7 +169,7 @@ Langogne tout comme Pradelles est traversée par une route nationale. Mais alors
 
 		var zoom =  11 ;
 
-		var lgpx = new OpenLayers.Layer.Vector("Tracet du jour", {
+		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],
 			protocol: new OpenLayers.Protocol.HTTP({
 				url: "\/gpx\/stevenson\/j4.gpx",
@@ -258,10 +186,7 @@ Langogne tout comme Pradelles est traversée par une route nationale. Mais alors
 </script>
 
 
-
-		
-
-</body>
+	</body>
 
 </html>
 

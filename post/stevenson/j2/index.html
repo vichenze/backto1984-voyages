@@ -18,11 +18,14 @@
 
     
     <link href="http://voyages.backto1984.com/css/clean-blog.css" rel="stylesheet">
-    <link href="http://voyages.backto1984.com/css/nanogallery2.min.css" rel="stylesheet">
 
     
     
     
+
+    <script src="http://voyages.backto1984.comjs/jquery.min.js"></script>
+	<script src="http://voyages.backto1984.comjs/bootstrap.min.js"></script>
+	<script src="http://voyages.backto1984.comjs/clean-blog.js"></script>
 </head>
 
 <body>
@@ -99,73 +102,7 @@ Là, en vérité, vous trouverez de nombreux coins auxquels on prend goût; ce q
     Photos<br />
     <small>(cliquez pour agrandir)</small>
 </h4>
-<div id="gallery" data-nanogallery2 = '{
-    "thumbnailHeight": 200,
-    "thumbnailWidth": "auto",
-    "thumbnailLabel": { "display": false },
-    "thumbnailBorderHorizontal": 0,
-    "thumbnailBorderVertical": 0,
-    "thumbnailGutterWidth": 1,
-    "thumbnailGutterHeight": 1,
-    "imageTransition": "slideAppear",
-    "viewerFullscreen": true,
-    "viewerToolbar": { "display": false },
-    "viewerTools": { "topRight": "zoomButton, fullscreenButton, closeButton", "topLeft": "pageCounter" }
-  }'>
-        
-            <a href="/images/stevenson/j2/gallery/IMG_2813_DxO.jpg" data-ngthumb="/images/stevenson/j2/gallery/small/IMG_2813_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j2/gallery/IMG_2818_DxO.jpg" data-ngthumb="/images/stevenson/j2/gallery/small/IMG_2818_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j2/gallery/IMG_2821_DxO.jpg" data-ngthumb="/images/stevenson/j2/gallery/small/IMG_2821_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j2/gallery/IMG_2826_DxO.jpg" data-ngthumb="/images/stevenson/j2/gallery/small/IMG_2826_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j2/gallery/IMG_2827_DxO.jpg" data-ngthumb="/images/stevenson/j2/gallery/small/IMG_2827_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j2/gallery/IMG_2829_DxO.jpg" data-ngthumb="/images/stevenson/j2/gallery/small/IMG_2829_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j2/gallery/IMG_2833_DxO.jpg" data-ngthumb="/images/stevenson/j2/gallery/small/IMG_2833_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j2/gallery/IMG_2835_DxO.jpg" data-ngthumb="/images/stevenson/j2/gallery/small/IMG_2835_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j2/gallery/IMG_2836_DxO.jpg" data-ngthumb="/images/stevenson/j2/gallery/small/IMG_2836_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j2/gallery/IMG_2845_DxO.jpg" data-ngthumb="/images/stevenson/j2/gallery/small/IMG_2845_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j2/gallery/IMG_2847_DxO.jpg" data-ngthumb="/images/stevenson/j2/gallery/small/IMG_2847_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j2/gallery/IMG_2851_DxO.jpg" data-ngthumb="/images/stevenson/j2/gallery/small/IMG_2851_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j2/gallery/IMG_2857_DxO.jpg" data-ngthumb="/images/stevenson/j2/gallery/small/IMG_2857_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j2/gallery/IMG_2864_DxO.jpg" data-ngthumb="/images/stevenson/j2/gallery/small/IMG_2864_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j2/gallery/IMG_2869_DxO.jpg" data-ngthumb="/images/stevenson/j2/gallery/small/IMG_2869_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j2/gallery/IMG_2876_DxO.jpg" data-ngthumb="/images/stevenson/j2/gallery/small/IMG_2876_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j2/gallery/night.jpg" data-ngthumb="/images/stevenson/j2/gallery/small/night.jpg"></a>
-        
-        
-</div>
-
+<div id="flickr-gallery" data-album-id="72157717066500118"></div>
 
 
 				</div>
@@ -227,18 +164,6 @@ Là, en vérité, vous trouverez de nombreux coins auxquels on prend goût; ce q
 				</div>
 		</footer>
 
-		
-		<script src="http://voyages.backto1984.com/js/jquery.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/bootstrap.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/clean-blog.js"></script>
-
-		<script type="text/javascript" src="http://voyages.backto1984.com/js/jquery.nanogallery2.core.min.js"></script>
-
-
 		<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 
 <script>
@@ -256,7 +181,7 @@ Là, en vérité, vous trouverez de nombreux coins auxquels on prend goût; ce q
 
 		var zoom =  12 ;
 
-		var lgpx = new OpenLayers.Layer.Vector("Tracet du jour", {
+		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],
 			protocol: new OpenLayers.Protocol.HTTP({
 				url: "\/gpx\/stevenson\/j2.gpx",
@@ -273,10 +198,7 @@ Là, en vérité, vous trouverez de nombreux coins auxquels on prend goût; ce q
 </script>
 
 
-
-		
-
-</body>
+	</body>
 
 </html>
 

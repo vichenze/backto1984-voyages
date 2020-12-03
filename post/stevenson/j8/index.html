@@ -18,11 +18,14 @@
 
     
     <link href="http://voyages.backto1984.com/css/clean-blog.css" rel="stylesheet">
-    <link href="http://voyages.backto1984.com/css/nanogallery2.min.css" rel="stylesheet">
 
     
     
     
+
+    <script src="http://voyages.backto1984.comjs/jquery.min.js"></script>
+	<script src="http://voyages.backto1984.comjs/bootstrap.min.js"></script>
+	<script src="http://voyages.backto1984.comjs/clean-blog.js"></script>
 </head>
 
 <body>
@@ -98,64 +101,7 @@ Un fond de vallée marécageux, un filet d&rsquo;eau à travers les herbes haute
     Photos<br />
     <small>(cliquez pour agrandir)</small>
 </h4>
-<div id="gallery" data-nanogallery2 = '{
-    "thumbnailHeight": 200,
-    "thumbnailWidth": "auto",
-    "thumbnailLabel": { "display": false },
-    "thumbnailBorderHorizontal": 0,
-    "thumbnailBorderVertical": 0,
-    "thumbnailGutterWidth": 1,
-    "thumbnailGutterHeight": 1,
-    "imageTransition": "slideAppear",
-    "viewerFullscreen": true,
-    "viewerToolbar": { "display": false },
-    "viewerTools": { "topRight": "zoomButton, fullscreenButton, closeButton", "topLeft": "pageCounter" }
-  }'>
-        
-            <a href="/images/stevenson/j8/gallery/2020-08-21%2016.11.15_DxO.jpg" data-ngthumb="/images/stevenson/j8/gallery/small/2020-08-21 16.11.15_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j8/gallery/IMG_3410_DxO.jpg" data-ngthumb="/images/stevenson/j8/gallery/small/IMG_3410_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j8/gallery/IMG_3413_DxO.jpg" data-ngthumb="/images/stevenson/j8/gallery/small/IMG_3413_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j8/gallery/IMG_3416_DxO.jpg" data-ngthumb="/images/stevenson/j8/gallery/small/IMG_3416_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j8/gallery/IMG_3423_DxO.jpg" data-ngthumb="/images/stevenson/j8/gallery/small/IMG_3423_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j8/gallery/IMG_3428_DxO.jpg" data-ngthumb="/images/stevenson/j8/gallery/small/IMG_3428_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j8/gallery/IMG_3436_DxO.jpg" data-ngthumb="/images/stevenson/j8/gallery/small/IMG_3436_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j8/gallery/IMG_3439_DxO.jpg" data-ngthumb="/images/stevenson/j8/gallery/small/IMG_3439_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j8/gallery/IMG_3442_DxO.jpg" data-ngthumb="/images/stevenson/j8/gallery/small/IMG_3442_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j8/gallery/IMG_3444_DxO.jpg" data-ngthumb="/images/stevenson/j8/gallery/small/IMG_3444_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j8/gallery/IMG_3447_DxO.jpg" data-ngthumb="/images/stevenson/j8/gallery/small/IMG_3447_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j8/gallery/IMG_3450_DxO.jpg" data-ngthumb="/images/stevenson/j8/gallery/small/IMG_3450_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j8/gallery/IMG_3453_DxO.jpg" data-ngthumb="/images/stevenson/j8/gallery/small/IMG_3453_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j8/gallery/IMG_3458_DxO.jpg" data-ngthumb="/images/stevenson/j8/gallery/small/IMG_3458_DxO.jpg"></a>
-        
-        
-</div>
-
+<div id="flickr-gallery" data-album-id="72157717066667641"></div>
 
 
 				</div>
@@ -217,18 +163,6 @@ Un fond de vallée marécageux, un filet d&rsquo;eau à travers les herbes haute
 				</div>
 		</footer>
 
-		
-		<script src="http://voyages.backto1984.com/js/jquery.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/bootstrap.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/clean-blog.js"></script>
-
-		<script type="text/javascript" src="http://voyages.backto1984.com/js/jquery.nanogallery2.core.min.js"></script>
-
-
 		<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 
 <script>
@@ -246,7 +180,7 @@ Un fond de vallée marécageux, un filet d&rsquo;eau à travers les herbes haute
 
 		var zoom =  12 ;
 
-		var lgpx = new OpenLayers.Layer.Vector("Tracet du jour", {
+		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],
 			protocol: new OpenLayers.Protocol.HTTP({
 				url: "\/gpx\/stevenson\/j8.gpx",
@@ -263,10 +197,7 @@ Un fond de vallée marécageux, un filet d&rsquo;eau à travers les herbes haute
 </script>
 
 
-
-		
-
-</body>
+	</body>
 
 </html>
 

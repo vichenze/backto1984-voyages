@@ -18,11 +18,14 @@
 
     
     <link href="http://voyages.backto1984.com/css/clean-blog.css" rel="stylesheet">
-    <link href="http://voyages.backto1984.com/css/nanogallery2.min.css" rel="stylesheet">
 
     
     
     
+
+    <script src="http://voyages.backto1984.comjs/jquery.min.js"></script>
+	<script src="http://voyages.backto1984.comjs/bootstrap.min.js"></script>
+	<script src="http://voyages.backto1984.comjs/clean-blog.js"></script>
 </head>
 
 <body>
@@ -310,18 +313,6 @@ Pour des explications plus pointues (et plus justes !) que les miennes, je vous 
 				</div>
 		</footer>
 
-		
-		<script src="http://voyages.backto1984.com/js/jquery.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/bootstrap.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/clean-blog.js"></script>
-
-		<script type="text/javascript" src="http://voyages.backto1984.com/js/jquery.nanogallery2.core.min.js"></script>
-
-
 		<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 
 <script>
@@ -339,7 +330,7 @@ Pour des explications plus pointues (et plus justes !) que les miennes, je vous 
 
 		var zoom =  10 ;
 
-		var lgpx = new OpenLayers.Layer.Vector("Tracet du jour", {
+		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],
 			protocol: new OpenLayers.Protocol.HTTP({
 				url: "\/gpx\/corse\/j2.gpx",
@@ -356,10 +347,7 @@ Pour des explications plus pointues (et plus justes !) que les miennes, je vous 
 </script>
 
 
-
-		
-
-</body>
+	</body>
 
 </html>
 
