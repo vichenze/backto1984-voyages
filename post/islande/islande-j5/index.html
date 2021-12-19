@@ -18,11 +18,14 @@
 
     
     <link href="http://voyages.backto1984.com/css/clean-blog.css" rel="stylesheet">
-    <link href="http://voyages.backto1984.com/css/nanogallery2.min.css" rel="stylesheet">
 
     
     
     
+
+    <script src="http://voyages.backto1984.com/js/jquery.min.js"></script>
+	<script src="http://voyages.backto1984.com/js/bootstrap.min.js"></script>
+	<script src="http://voyages.backto1984.com/js/clean-blog.js"></script>
 </head>
 
 <body>
@@ -162,18 +165,6 @@ Et on sent nettement que le soleil n’a pas vraiment envie de descendre trop ba
 				</div>
 		</footer>
 
-		
-		<script src="http://voyages.backto1984.com/js/jquery.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/bootstrap.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/clean-blog.js"></script>
-
-		<script type="text/javascript" src="http://voyages.backto1984.com/js/jquery.nanogallery2.core.min.js"></script>
-
-
 		<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 
 <script>
@@ -191,7 +182,7 @@ Et on sent nettement que le soleil n’a pas vraiment envie de descendre trop ba
 
 		var zoom = "8";
 
-		var lgpx = new OpenLayers.Layer.Vector("Tracet du jour", {
+		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],
 			protocol: new OpenLayers.Protocol.HTTP({
 				url: "\/gpx\/islande\/etape5.gpx",
@@ -208,10 +199,7 @@ Et on sent nettement que le soleil n’a pas vraiment envie de descendre trop ba
 </script>
 
 
-
-		
-
-</body>
+	</body>
 
 </html>
 

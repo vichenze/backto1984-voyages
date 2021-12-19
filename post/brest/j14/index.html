@@ -18,11 +18,14 @@
 
     
     <link href="http://voyages.backto1984.com/css/clean-blog.css" rel="stylesheet">
-    <link href="http://voyages.backto1984.com/css/nanogallery2.min.css" rel="stylesheet">
 
     
     
     
+
+    <script src="http://voyages.backto1984.com/js/jquery.min.js"></script>
+	<script src="http://voyages.backto1984.com/js/bootstrap.min.js"></script>
+	<script src="http://voyages.backto1984.com/js/clean-blog.js"></script>
 </head>
 
 <body>
@@ -201,18 +204,6 @@ Tant qu&rsquo;à parler de la population locale, il est à signaler qu&rsquo;une
 				</div>
 		</footer>
 
-		
-		<script src="http://voyages.backto1984.com/js/jquery.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/bootstrap.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/clean-blog.js"></script>
-
-		<script type="text/javascript" src="http://voyages.backto1984.com/js/jquery.nanogallery2.core.min.js"></script>
-
-
 		<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 
 <script>
@@ -230,7 +221,7 @@ Tant qu&rsquo;à parler de la population locale, il est à signaler qu&rsquo;une
 
 		var zoom = "8";
 
-		var lgpx = new OpenLayers.Layer.Vector("Tracet du jour", {
+		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],
 			protocol: new OpenLayers.Protocol.HTTP({
 				url: "\/gpx\/brest\/brest_j14.gpx",
@@ -247,10 +238,7 @@ Tant qu&rsquo;à parler de la population locale, il est à signaler qu&rsquo;une
 </script>
 
 
-
-		
-
-</body>
+	</body>
 
 </html>
 

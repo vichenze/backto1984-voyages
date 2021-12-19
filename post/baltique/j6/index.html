@@ -18,11 +18,14 @@
 
     
     <link href="http://voyages.backto1984.com/css/clean-blog.css" rel="stylesheet">
-    <link href="http://voyages.backto1984.com/css/nanogallery2.min.css" rel="stylesheet">
 
     
     
     
+
+    <script src="http://voyages.backto1984.com/js/jquery.min.js"></script>
+	<script src="http://voyages.backto1984.com/js/bootstrap.min.js"></script>
+	<script src="http://voyages.backto1984.com/js/clean-blog.js"></script>
 </head>
 
 <body>
@@ -196,18 +199,6 @@ Puis quand c&rsquo;est nécessaire, un matelot monte dans la mature pour serrer 
 				</div>
 		</footer>
 
-		
-		<script src="http://voyages.backto1984.com/js/jquery.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/bootstrap.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/clean-blog.js"></script>
-
-		<script type="text/javascript" src="http://voyages.backto1984.com/js/jquery.nanogallery2.core.min.js"></script>
-
-
 		<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 
 <script>
@@ -225,7 +216,7 @@ Puis quand c&rsquo;est nécessaire, un matelot monte dans la mature pour serrer 
 
 		var zoom = "8";
 
-		var lgpx = new OpenLayers.Layer.Vector("Tracet du jour", {
+		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],
 			protocol: new OpenLayers.Protocol.HTTP({
 				url: "",
@@ -242,10 +233,7 @@ Puis quand c&rsquo;est nécessaire, un matelot monte dans la mature pour serrer 
 </script>
 
 
-
-		
-
-</body>
+	</body>
 
 </html>
 

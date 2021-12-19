@@ -18,11 +18,14 @@
 
     
     <link href="http://voyages.backto1984.com/css/clean-blog.css" rel="stylesheet">
-    <link href="http://voyages.backto1984.com/css/nanogallery2.min.css" rel="stylesheet">
 
     
     
     
+
+    <script src="http://voyages.backto1984.com/js/jquery.min.js"></script>
+	<script src="http://voyages.backto1984.com/js/bootstrap.min.js"></script>
+	<script src="http://voyages.backto1984.com/js/clean-blog.js"></script>
 </head>
 
 <body>
@@ -103,73 +106,7 @@ La lune, dont j’avais vu le pâle croissant durant tout l’après-midi, écla
     Photos<br />
     <small>(cliquez pour agrandir)</small>
 </h4>
-<div id="gallery" data-nanogallery2 = '{
-    "thumbnailHeight": 200,
-    "thumbnailWidth": "auto",
-    "thumbnailLabel": { "display": false },
-    "thumbnailBorderHorizontal": 0,
-    "thumbnailBorderVertical": 0,
-    "thumbnailGutterWidth": 1,
-    "thumbnailGutterHeight": 1,
-    "imageTransition": "slideAppear",
-    "viewerFullscreen": true,
-    "viewerToolbar": { "display": false },
-    "viewerTools": { "topRight": "zoomButton, fullscreenButton, closeButton", "topLeft": "pageCounter" }
-  }'>
-        
-            <a href="/images/stevenson/j11/gallery/IMG_3664_DxO.jpg" data-ngthumb="/images/stevenson/j11/gallery/small/IMG_3664_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j11/gallery/IMG_3669_DxO.jpg" data-ngthumb="/images/stevenson/j11/gallery/small/IMG_3669_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j11/gallery/IMG_3672_DxO.jpg" data-ngthumb="/images/stevenson/j11/gallery/small/IMG_3672_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j11/gallery/IMG_3677_DxO.jpg" data-ngthumb="/images/stevenson/j11/gallery/small/IMG_3677_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j11/gallery/IMG_3683_DxO.jpg" data-ngthumb="/images/stevenson/j11/gallery/small/IMG_3683_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j11/gallery/IMG_3689_DxO.jpg" data-ngthumb="/images/stevenson/j11/gallery/small/IMG_3689_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j11/gallery/IMG_3693_DxO.jpg" data-ngthumb="/images/stevenson/j11/gallery/small/IMG_3693_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j11/gallery/IMG_3701_DxO.jpg" data-ngthumb="/images/stevenson/j11/gallery/small/IMG_3701_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j11/gallery/IMG_3712_DxO.jpg" data-ngthumb="/images/stevenson/j11/gallery/small/IMG_3712_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j11/gallery/IMG_3716_DxO.jpg" data-ngthumb="/images/stevenson/j11/gallery/small/IMG_3716_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j11/gallery/IMG_3718_DxO.jpg" data-ngthumb="/images/stevenson/j11/gallery/small/IMG_3718_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j11/gallery/IMG_3726_DxO.jpg" data-ngthumb="/images/stevenson/j11/gallery/small/IMG_3726_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j11/gallery/IMG_3731_DxO.jpg" data-ngthumb="/images/stevenson/j11/gallery/small/IMG_3731_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j11/gallery/IMG_3733_DxO.jpg" data-ngthumb="/images/stevenson/j11/gallery/small/IMG_3733_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j11/gallery/IMG_3749_DxO.jpg" data-ngthumb="/images/stevenson/j11/gallery/small/IMG_3749_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j11/gallery/IMG_3753_DxO.jpg" data-ngthumb="/images/stevenson/j11/gallery/small/IMG_3753_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j11/gallery/IMG_3759_DxO.jpg" data-ngthumb="/images/stevenson/j11/gallery/small/IMG_3759_DxO.jpg"></a>
-        
-        
-</div>
-
+<div id="flickr-gallery" data-album-id="72157717066654318"></div>
 
 
 				</div>
@@ -231,18 +168,6 @@ La lune, dont j’avais vu le pâle croissant durant tout l’après-midi, écla
 				</div>
 		</footer>
 
-		
-		<script src="http://voyages.backto1984.com/js/jquery.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/bootstrap.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/clean-blog.js"></script>
-
-		<script type="text/javascript" src="http://voyages.backto1984.com/js/jquery.nanogallery2.core.min.js"></script>
-
-
 		<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 
 <script>
@@ -260,7 +185,7 @@ La lune, dont j’avais vu le pâle croissant durant tout l’après-midi, écla
 
 		var zoom =  12 ;
 
-		var lgpx = new OpenLayers.Layer.Vector("Tracet du jour", {
+		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],
 			protocol: new OpenLayers.Protocol.HTTP({
 				url: "\/gpx\/stevenson\/j11.gpx",
@@ -277,10 +202,7 @@ La lune, dont j’avais vu le pâle croissant durant tout l’après-midi, écla
 </script>
 
 
-
-		
-
-</body>
+	</body>
 
 </html>
 

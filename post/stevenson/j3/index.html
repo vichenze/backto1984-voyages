@@ -18,11 +18,14 @@
 
     
     <link href="http://voyages.backto1984.com/css/clean-blog.css" rel="stylesheet">
-    <link href="http://voyages.backto1984.com/css/nanogallery2.min.css" rel="stylesheet">
 
     
     
     
+
+    <script src="http://voyages.backto1984.com/js/jquery.min.js"></script>
+	<script src="http://voyages.backto1984.com/js/bootstrap.min.js"></script>
+	<script src="http://voyages.backto1984.com/js/clean-blog.js"></script>
 </head>
 
 <body>
@@ -111,73 +114,7 @@ Nous l&rsquo;avions deviné aux camping-car et aux plaques d&rsquo;immatriculati
     Photos<br />
     <small>(cliquez pour agrandir)</small>
 </h4>
-<div id="gallery" data-nanogallery2 = '{
-    "thumbnailHeight": 200,
-    "thumbnailWidth": "auto",
-    "thumbnailLabel": { "display": false },
-    "thumbnailBorderHorizontal": 0,
-    "thumbnailBorderVertical": 0,
-    "thumbnailGutterWidth": 1,
-    "thumbnailGutterHeight": 1,
-    "imageTransition": "slideAppear",
-    "viewerFullscreen": true,
-    "viewerToolbar": { "display": false },
-    "viewerTools": { "topRight": "zoomButton, fullscreenButton, closeButton", "topLeft": "pageCounter" }
-  }'>
-        
-            <a href="/images/stevenson/j3/gallery/IMG_2891_DxO.jpg" data-ngthumb="/images/stevenson/j3/gallery/small/IMG_2891_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j3/gallery/IMG_2894_DxO.jpg" data-ngthumb="/images/stevenson/j3/gallery/small/IMG_2894_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j3/gallery/IMG_2897_DxO.jpg" data-ngthumb="/images/stevenson/j3/gallery/small/IMG_2897_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j3/gallery/IMG_2903_DxO.jpg" data-ngthumb="/images/stevenson/j3/gallery/small/IMG_2903_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j3/gallery/IMG_2907_DxO.jpg" data-ngthumb="/images/stevenson/j3/gallery/small/IMG_2907_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j3/gallery/IMG_2910_DxO.jpg" data-ngthumb="/images/stevenson/j3/gallery/small/IMG_2910_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j3/gallery/IMG_2911_DxO.jpg" data-ngthumb="/images/stevenson/j3/gallery/small/IMG_2911_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j3/gallery/IMG_2913_DxO.jpg" data-ngthumb="/images/stevenson/j3/gallery/small/IMG_2913_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j3/gallery/IMG_2918_DxO.jpg" data-ngthumb="/images/stevenson/j3/gallery/small/IMG_2918_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j3/gallery/IMG_2921_DxO.jpg" data-ngthumb="/images/stevenson/j3/gallery/small/IMG_2921_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j3/gallery/IMG_2924_DxO.jpg" data-ngthumb="/images/stevenson/j3/gallery/small/IMG_2924_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j3/gallery/IMG_2933_DxO.jpg" data-ngthumb="/images/stevenson/j3/gallery/small/IMG_2933_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j3/gallery/IMG_2937_DxO.jpg" data-ngthumb="/images/stevenson/j3/gallery/small/IMG_2937_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j3/gallery/IMG_2942_DxO.jpg" data-ngthumb="/images/stevenson/j3/gallery/small/IMG_2942_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j3/gallery/IMG_2949_DxO.jpg" data-ngthumb="/images/stevenson/j3/gallery/small/IMG_2949_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j3/gallery/IMG_2953_DxO.jpg" data-ngthumb="/images/stevenson/j3/gallery/small/IMG_2953_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j3/gallery/IMG_2957_DxO.jpg" data-ngthumb="/images/stevenson/j3/gallery/small/IMG_2957_DxO.jpg"></a>
-        
-        
-</div>
-
+<div id="flickr-gallery" data-album-id="72157717070802477"></div>
 
 
 				</div>
@@ -239,18 +176,6 @@ Nous l&rsquo;avions deviné aux camping-car et aux plaques d&rsquo;immatriculati
 				</div>
 		</footer>
 
-		
-		<script src="http://voyages.backto1984.com/js/jquery.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/bootstrap.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/clean-blog.js"></script>
-
-		<script type="text/javascript" src="http://voyages.backto1984.com/js/jquery.nanogallery2.core.min.js"></script>
-
-
 		<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 
 <script>
@@ -268,7 +193,7 @@ Nous l&rsquo;avions deviné aux camping-car et aux plaques d&rsquo;immatriculati
 
 		var zoom =  12 ;
 
-		var lgpx = new OpenLayers.Layer.Vector("Tracet du jour", {
+		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],
 			protocol: new OpenLayers.Protocol.HTTP({
 				url: "\/gpx\/stevenson\/j3.gpx",
@@ -285,10 +210,7 @@ Nous l&rsquo;avions deviné aux camping-car et aux plaques d&rsquo;immatriculati
 </script>
 
 
-
-		
-
-</body>
+	</body>
 
 </html>
 

@@ -18,11 +18,14 @@
 
     
     <link href="http://voyages.backto1984.com/css/clean-blog.css" rel="stylesheet">
-    <link href="http://voyages.backto1984.com/css/nanogallery2.min.css" rel="stylesheet">
 
     
     
     
+
+    <script src="http://voyages.backto1984.com/js/jquery.min.js"></script>
+	<script src="http://voyages.backto1984.com/js/bootstrap.min.js"></script>
+	<script src="http://voyages.backto1984.com/js/clean-blog.js"></script>
 </head>
 
 <body>
@@ -99,79 +102,7 @@ Nos hôtes sont heureusement des plus agréables et nous nous restaurons copieus
     Photos<br />
     <small>(cliquez pour agrandir)</small>
 </h4>
-<div id="gallery" data-nanogallery2 = '{
-    "thumbnailHeight": 200,
-    "thumbnailWidth": "auto",
-    "thumbnailLabel": { "display": false },
-    "thumbnailBorderHorizontal": 0,
-    "thumbnailBorderVertical": 0,
-    "thumbnailGutterWidth": 1,
-    "thumbnailGutterHeight": 1,
-    "imageTransition": "slideAppear",
-    "viewerFullscreen": true,
-    "viewerToolbar": { "display": false },
-    "viewerTools": { "topRight": "zoomButton, fullscreenButton, closeButton", "topLeft": "pageCounter" }
-  }'>
-        
-            <a href="/images/stevenson/j1/gallery/2020-08-14%2010.02.37_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/2020-08-14 10.02.37_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j1/gallery/IMG_2727_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/IMG_2727_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j1/gallery/IMG_2728_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/IMG_2728_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j1/gallery/IMG_2731_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/IMG_2731_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j1/gallery/IMG_2734_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/IMG_2734_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j1/gallery/IMG_2746_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/IMG_2746_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j1/gallery/IMG_2751_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/IMG_2751_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j1/gallery/IMG_2756_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/IMG_2756_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j1/gallery/IMG_2759_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/IMG_2759_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j1/gallery/IMG_2764_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/IMG_2764_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j1/gallery/IMG_2774_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/IMG_2774_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j1/gallery/IMG_2775_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/IMG_2775_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j1/gallery/IMG_2778_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/IMG_2778_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j1/gallery/IMG_2789_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/IMG_2789_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j1/gallery/IMG_2792_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/IMG_2792_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j1/gallery/IMG_2802_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/IMG_2802_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j1/gallery/IMG_2805_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/IMG_2805_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j1/gallery/IMG_2808_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/IMG_2808_DxO.jpg"></a>
-        
-        
-            <a href="/images/stevenson/j1/gallery/IMG_2810_DxO.jpg" data-ngthumb="/images/stevenson/j1/gallery/small/IMG_2810_DxO.jpg"></a>
-        
-        
-</div>
-
+<div id="flickr-gallery" data-album-id="72157717051900108"></div>
 
 
 				</div>
@@ -233,18 +164,6 @@ Nos hôtes sont heureusement des plus agréables et nous nous restaurons copieus
 				</div>
 		</footer>
 
-		
-		<script src="http://voyages.backto1984.com/js/jquery.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/bootstrap.min.js"></script>
-
-		
-		<script src="http://voyages.backto1984.com/js/clean-blog.js"></script>
-
-		<script type="text/javascript" src="http://voyages.backto1984.com/js/jquery.nanogallery2.core.min.js"></script>
-
-
 		<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 
 <script>
@@ -262,7 +181,7 @@ Nos hôtes sont heureusement des plus agréables et nous nous restaurons copieus
 
 		var zoom =  13 ;
 
-		var lgpx = new OpenLayers.Layer.Vector("Tracet du jour", {
+		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],
 			protocol: new OpenLayers.Protocol.HTTP({
 				url: "\/gpx\/stevenson\/j1.gpx",
@@ -279,10 +198,7 @@ Nos hôtes sont heureusement des plus agréables et nous nous restaurons copieus
 </script>
 
 
-
-		
-
-</body>
+	</body>
 
 </html>
 
