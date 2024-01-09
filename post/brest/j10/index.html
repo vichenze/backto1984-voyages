@@ -295,16 +295,26 @@ Et puis tant qu&rsquo;on en est à parler des désagréments, il en est un autre
 
 	function init() {
 
-		map = new OpenLayers.Map("map");
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const defaultLongitude = "-4.651443"
+        const defaultLatitude = "57.628775"
+        const defaultZoom = "8"
+        const mobileLongitude =  null 
+        const mobileLatitude =  null 
+        const mobileZoom = "8"
+
+        const longitude = isMobile && mobileLongitude ? mobileLongitude : defaultLongitude;
+        const latitude = isMobile && mobileLatitude ? mobileLatitude : defaultLatitude;
+        const zoom = isMobile && mobileZoom ? mobileZoom : defaultZoom;
+
+		const map = new OpenLayers.Map("map");
 		var mapnik = new OpenLayers.Layer.OSM();
 		map.addLayer(mapnik);
 
-		var lonlat = new OpenLayers.LonLat("-4.651443", "57.628775").transform(
+		var lonlat = new OpenLayers.LonLat(longitude, latitude).transform(
 			new OpenLayers.Projection("EPSG:4326"), 
 			new OpenLayers.Projection("EPSG:900913") 
 		);
-
-		var zoom = "8";
 
 		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],

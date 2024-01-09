@@ -6,10 +6,19 @@
     <description>Recent content in Andalousie on Back to 1984 — Voyages</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>hello [at] backto1984.com</copyright>
-    <lastBuildDate>Fri, 13 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Oct 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://voyages.backto1984.com/categories/andalousie/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>La suite</title>
+      <link>http://voyages.backto1984.com/post/andalousie/j8/</link>
+      <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://voyages.backto1984.com/post/andalousie/j8/</guid>
+      <description>La suite est encore en cours de rédaction. Elle sera publiée prochainement.</description>
+    </item>
     
     <item>
       <title>Gaspacho</title>

@@ -110,15 +110,13 @@ Elle est découpée cérémonieusement puis servie à la pelle comme un luxueux 
 <div id="flickr-gallery" data-album-id="72177720313269984"></div>
 
 <blockquote>
-	<p>
-L'écriture naît d'une illusion : illusion que je suis meilleur que moi-même, plus pénétrant, généreux et sensible. Illusion aussi que je suis 
-capable d'écrire. Lorsque cette illusion est maintenue assez longtemps - comme un révélateur qu'on porte à température - elle devient réalité, 
-j'écris et je m'ajuste aux exigences de l'écriture. L'écriture c'est mon théâtre et si je ne sais pas toujours comment la pièce commence, 
-je sais par contre qu'elle finit bien. Chaque fois que je me laisse déranger, c'est comme si on rallumait dans la salle, comme si des spectateurs 
-se levaient et partaient bruyamment avant que la moindre phrase d'un peu de portée et de poids ait été prononcée sur la scène.
-
-L'illusion a donc son rôle à jouer dans ma vie : c'est un moteur parmi d'autres, c'est une variété roturière de l'acte de foi dont on ne se sent 
-pas toujours capable. Il y a ainsi des rapports très étroits entre l'illusion et l'édification de l'être, ceci permettant souvent cela.
+	<p><p>L&rsquo;écriture naît d&rsquo;une illusion : illusion que je suis meilleur que moi-même, plus pénétrant, généreux et sensible. Illusion aussi que je suis
+capable d&rsquo;écrire. Lorsque cette illusion est maintenue assez longtemps - comme un révélateur qu&rsquo;on porte à température - elle devient réalité,
+j&rsquo;écris et je m&rsquo;ajuste aux exigences de l&rsquo;écriture. L&rsquo;écriture c&rsquo;est mon théâtre et si je ne sais pas toujours comment la pièce commence,
+je sais par contre qu&rsquo;elle finit bien. Chaque fois que je me laisse déranger, c&rsquo;est comme si on rallumait dans la salle, comme si des spectateurs
+se levaient et partaient bruyamment avant que la moindre phrase d&rsquo;un peu de portée et de poids ait été prononcée sur la scène.</p>
+<p>L&rsquo;illusion a donc son rôle à jouer dans ma vie : c&rsquo;est un moteur parmi d&rsquo;autres, c&rsquo;est une variété roturière de l&rsquo;acte de foi dont on ne se sent
+pas toujours capable. Il y a ainsi des rapports très étroits entre l&rsquo;illusion et l&rsquo;édification de l&rsquo;être, ceci permettant souvent cela.</p>
 </p>
 	<footer>
 		Nicolas Bouvier, <cite>Le vide et le plein</cite>
@@ -191,16 +189,26 @@ pas toujours capable. Il y a ainsi des rapports très étroits entre l'illusion 
 
 	function init() {
 
-		map = new OpenLayers.Map("map");
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const defaultLongitude = "-5.5"
+        const defaultLatitude = "38.3"
+        const defaultZoom =  7 
+        const mobileLongitude =  null 
+        const mobileLatitude =  null 
+        const mobileZoom =  6 
+
+        const longitude = isMobile && mobileLongitude ? mobileLongitude : defaultLongitude;
+        const latitude = isMobile && mobileLatitude ? mobileLatitude : defaultLatitude;
+        const zoom = isMobile && mobileZoom ? mobileZoom : defaultZoom;
+
+		const map = new OpenLayers.Map("map");
 		var mapnik = new OpenLayers.Layer.OSM();
 		map.addLayer(mapnik);
 
-		var lonlat = new OpenLayers.LonLat("-5.5", "38.3").transform(
+		var lonlat = new OpenLayers.LonLat(longitude, latitude).transform(
 			new OpenLayers.Projection("EPSG:4326"), 
 			new OpenLayers.Projection("EPSG:900913") 
 		);
-
-		var zoom =  7 ;
 
 		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],

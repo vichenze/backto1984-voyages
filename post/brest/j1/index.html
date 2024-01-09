@@ -177,16 +177,26 @@ Et c&rsquo;est un travail ô combien difficile et frustrant, car c&rsquo;est là
 
 	function init() {
 
-		map = new OpenLayers.Map("map");
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const defaultLongitude = "-4.211610"
+        const defaultLatitude = "48.508812"
+        const defaultZoom = "8"
+        const mobileLongitude =  null 
+        const mobileLatitude =  null 
+        const mobileZoom = "8"
+
+        const longitude = isMobile && mobileLongitude ? mobileLongitude : defaultLongitude;
+        const latitude = isMobile && mobileLatitude ? mobileLatitude : defaultLatitude;
+        const zoom = isMobile && mobileZoom ? mobileZoom : defaultZoom;
+
+		const map = new OpenLayers.Map("map");
 		var mapnik = new OpenLayers.Layer.OSM();
 		map.addLayer(mapnik);
 
-		var lonlat = new OpenLayers.LonLat("-4.211610", "48.508812").transform(
+		var lonlat = new OpenLayers.LonLat(longitude, latitude).transform(
 			new OpenLayers.Projection("EPSG:4326"), 
 			new OpenLayers.Projection("EPSG:900913") 
 		);
-
-		var zoom = "8";
 
 		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],

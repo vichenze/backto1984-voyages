@@ -225,16 +225,26 @@ Peine perdue, le Mal vous prend, inéluctable, il attend son heure, le temps jou
 
 	function init() {
 
-		map = new OpenLayers.Map("map");
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const defaultLongitude = "-3.28072"
+        const defaultLatitude = "48.80780"
+        const defaultZoom = "10"
+        const mobileLongitude =  null 
+        const mobileLatitude =  null 
+        const mobileZoom = "8"
+
+        const longitude = isMobile && mobileLongitude ? mobileLongitude : defaultLongitude;
+        const latitude = isMobile && mobileLatitude ? mobileLatitude : defaultLatitude;
+        const zoom = isMobile && mobileZoom ? mobileZoom : defaultZoom;
+
+		const map = new OpenLayers.Map("map");
 		var mapnik = new OpenLayers.Layer.OSM();
 		map.addLayer(mapnik);
 
-		var lonlat = new OpenLayers.LonLat("-3.28072", "48.80780").transform(
+		var lonlat = new OpenLayers.LonLat(longitude, latitude).transform(
 			new OpenLayers.Projection("EPSG:4326"), 
 			new OpenLayers.Projection("EPSG:900913") 
 		);
-
-		var zoom = "10";
 
 		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],

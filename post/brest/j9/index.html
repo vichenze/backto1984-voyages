@@ -210,16 +210,26 @@ La vue est pour le coup totalement dégagée, même s&rsquo;il n&rsquo;y a que p
 
 	function init() {
 
-		map = new OpenLayers.Map("map");
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const defaultLongitude = "-3.690264"
+        const defaultLatitude = "56.500775"
+        const defaultZoom = "7"
+        const mobileLongitude =  null 
+        const mobileLatitude =  null 
+        const mobileZoom = "8"
+
+        const longitude = isMobile && mobileLongitude ? mobileLongitude : defaultLongitude;
+        const latitude = isMobile && mobileLatitude ? mobileLatitude : defaultLatitude;
+        const zoom = isMobile && mobileZoom ? mobileZoom : defaultZoom;
+
+		const map = new OpenLayers.Map("map");
 		var mapnik = new OpenLayers.Layer.OSM();
 		map.addLayer(mapnik);
 
-		var lonlat = new OpenLayers.LonLat("-3.690264", "56.500775").transform(
+		var lonlat = new OpenLayers.LonLat(longitude, latitude).transform(
 			new OpenLayers.Projection("EPSG:4326"), 
 			new OpenLayers.Projection("EPSG:900913") 
 		);
-
-		var zoom = "7";
 
 		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],

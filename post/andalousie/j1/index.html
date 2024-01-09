@@ -121,14 +121,12 @@ qui s&rsquo;est rendue visible plein nord au-dessus des eaux noires.</p>
 <div id="flickr-gallery" data-album-id="72177720313242806"></div>
 
 <blockquote>
-	<p>
-Trop de gens attendent trop du voyage sans s'être jamais souciés de ce que le voyage attend d'eux. Ils souhaitent que le dépaysement les guérisse d'insuffisances qui ne sont 
-pas nationales, mais humaines, et l'ivresse des premières semaines où, tout étant nouveau, vous avez l'impression de l'être vous-même, leur donne l'impression passagère qu'ils 
-ont été exaucés. Puis quand le moi dont ils voulaient discrètement se défaire dans la gare du départ ou dans le premier port les retrouve au détour d'un paysage étranger, 
+	<p>Trop de gens attendent trop du voyage sans s&rsquo;être jamais souciés de ce que le voyage attend d&rsquo;eux. Ils souhaitent que le dépaysement les guérisse d&rsquo;insuffisances qui ne sont
+pas nationales, mais humaines, et l&rsquo;ivresse des premières semaines où, tout étant nouveau, vous avez l&rsquo;impression de l&rsquo;être vous-même, leur donne l&rsquo;impression passagère qu&rsquo;ils
+ont été exaucés. Puis quand le moi dont ils voulaient discrètement se défaire dans la gare du départ ou dans le premier port les retrouve au détour d&rsquo;un paysage étranger,
 ce moi morose et solitaire auquel on pensait avoir réglé son compte, ils en rendent responsable le pays où ils ont choisi de vivre.
-Le voyage ne vous apprendra rien si vous ne lui laissez pas aussi le droit de vous détruire. C'est une règle vieille comme le monde. Un voyage est comme un naufrage, et ceux 
-dont le bateau n'a jamais coulé ne sauront jamais rien de la mer. Le reste, c'est du patinage ou du tourisme.
-</p>
+Le voyage ne vous apprendra rien si vous ne lui laissez pas aussi le droit de vous détruire. C&rsquo;est une règle vieille comme le monde. Un voyage est comme un naufrage, et ceux
+dont le bateau n&rsquo;a jamais coulé ne sauront jamais rien de la mer. Le reste, c&rsquo;est du patinage ou du tourisme.</p>
 	<footer>
 		Nicolas Bouvier, <cite>Le vide et le plein</cite>
 	</footer>
@@ -200,16 +198,26 @@ dont le bateau n'a jamais coulé ne sauront jamais rien de la mer. Le reste, c'e
 
 	function init() {
 
-		map = new OpenLayers.Map("map");
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const defaultLongitude = "0.5"
+        const defaultLatitude = "46"
+        const defaultZoom =  6 
+        const mobileLongitude =  null 
+        const mobileLatitude =  null 
+        const mobileZoom =  5 
+
+        const longitude = isMobile && mobileLongitude ? mobileLongitude : defaultLongitude;
+        const latitude = isMobile && mobileLatitude ? mobileLatitude : defaultLatitude;
+        const zoom = isMobile && mobileZoom ? mobileZoom : defaultZoom;
+
+		const map = new OpenLayers.Map("map");
 		var mapnik = new OpenLayers.Layer.OSM();
 		map.addLayer(mapnik);
 
-		var lonlat = new OpenLayers.LonLat("0.5", "46").transform(
+		var lonlat = new OpenLayers.LonLat(longitude, latitude).transform(
 			new OpenLayers.Projection("EPSG:4326"), 
 			new OpenLayers.Projection("EPSG:900913") 
 		);
-
-		var zoom =  6 ;
 
 		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],

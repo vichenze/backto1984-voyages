@@ -80,9 +80,7 @@
 						</p>
 					</header>
 					<blockquote>
-	<p>
-Dans ce monde imparfait, nous accueillons avec joie des sympathies même partielles. Et ne rencontrerions-nous qu’un seul homme auquel ouvrir notre cœur franchement, avec qui pouvoir marcher dans l’affection et la simplicité sans feinte, nous n’avons pas lieu de nous plaindre ni du monde, ni de Dieu.
-</p>
+	<p>Dans ce monde imparfait, nous accueillons avec joie des sympathies même partielles. Et ne rencontrerions-nous qu’un seul homme auquel ouvrir notre cœur franchement, avec qui pouvoir marcher dans l’affection et la simplicité sans feinte, nous n’avons pas lieu de nous plaindre ni du monde, ni de Dieu.</p>
 	<footer>
 		Robert-Louis Stevenson, <cite>Voyage avec un âne dans les cévennes</cite>
 	</footer>
@@ -93,9 +91,7 @@ En vivant ainsi en nomade, en communauté éparse le long d&rsquo;un même axe, 
 <p>La courte étape d&rsquo;aujourd&rsquo;hui suit la vallée encaissée de la Mimente, à flanc de colline, sur le tracé d&rsquo;une ancienne voie ferrée dont ne demeure aujourd&rsquo;hui plus que la plateforme, les remblais et les ouvrages d&rsquo;art. Inaugurée en 1909 et clôturée en 1968, c&rsquo;est toute une vie ferroviaire qui nous sépare de RLS, tout un projet réfléchi puis déconstruit. Tant d&rsquo;investissements, de travaux de terrassement, effacés par un démantèlement qui ne laisse plus rien à voir aux voyageurs dans le temps. Grandeur et décadence du chemin de fer.
 RLS aura donc vu une toute autre vallée. Il se plaint de la déclivité importante et des nombreuses pierres qui entravent son avancée et l&rsquo;empêche d&rsquo;installer son campement. Il sera contraint à dormir dans le creux d&rsquo;un chêne, pour une nouvelle nuit à la belle étoile.</p>
 <blockquote>
-	<p>
-La lune, dont j’avais vu le pâle croissant durant tout l’après-midi, éclairait faiblement le faîte des monts, mais aucun rayon ne descendait au creux du ravin où j’étais étendu. Le chêne se dressait devant moi comme une colonne d’obscurité et, au-dessus de ma tête, de bienveillantes étoiles étaient accrochées au fronton de la nue. Personne ne connaît les étoiles qui n’a dormi, selon l’heureuse expression française, à la belle étoile. Il peut bien savoir tous leurs noms et distances et leurs grandeurs et demeurer pourtant dans l’ignorance de ce qui seul importe à l’humanité, leur bénéfique et sereine influence sur les âmes. Les étoiles sont la plus grande source de poésie et, à juste titre d’ailleurs, car elles sont elles-mêmes les plus classiques des poètes. Ces mondes même lointains, brillants comme des flambeaux ou agglomérés comme une poussière de diamants, là-haut, ont été les mêmes pour Roland ou pour Cavalier, lorsque pour emprunter une expression de ce dernier, « ils n’avaient d’autre tente que les cieux et d’autre lit que la terre maternelle ».
-</p>
+	<p>La lune, dont j’avais vu le pâle croissant durant tout l’après-midi, éclairait faiblement le faîte des monts, mais aucun rayon ne descendait au creux du ravin où j’étais étendu. Le chêne se dressait devant moi comme une colonne d’obscurité et, au-dessus de ma tête, de bienveillantes étoiles étaient accrochées au fronton de la nue. Personne ne connaît les étoiles qui n’a dormi, selon l’heureuse expression française, à la belle étoile. Il peut bien savoir tous leurs noms et distances et leurs grandeurs et demeurer pourtant dans l’ignorance de ce qui seul importe à l’humanité, leur bénéfique et sereine influence sur les âmes. Les étoiles sont la plus grande source de poésie et, à juste titre d’ailleurs, car elles sont elles-mêmes les plus classiques des poètes. Ces mondes même lointains, brillants comme des flambeaux ou agglomérés comme une poussière de diamants, là-haut, ont été les mêmes pour Roland ou pour Cavalier, lorsque pour emprunter une expression de ce dernier, « ils n’avaient d’autre tente que les cieux et d’autre lit que la terre maternelle ».</p>
 	<footer>
 		Robert-Louis Stevenson, <cite>Voyage avec un âne dans les cévennes</cite>
 	</footer>
@@ -174,16 +170,26 @@ La lune, dont j’avais vu le pâle croissant durant tout l’après-midi, écla
 
 	function init() {
 
-		map = new OpenLayers.Map("map");
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const defaultLongitude = "3.68"
+        const defaultLatitude = "44.31"
+        const defaultZoom =  12 
+        const mobileLongitude =  null 
+        const mobileLatitude =  null 
+        const mobileZoom = "8"
+
+        const longitude = isMobile && mobileLongitude ? mobileLongitude : defaultLongitude;
+        const latitude = isMobile && mobileLatitude ? mobileLatitude : defaultLatitude;
+        const zoom = isMobile && mobileZoom ? mobileZoom : defaultZoom;
+
+		const map = new OpenLayers.Map("map");
 		var mapnik = new OpenLayers.Layer.OSM();
 		map.addLayer(mapnik);
 
-		var lonlat = new OpenLayers.LonLat("3.68", "44.31").transform(
+		var lonlat = new OpenLayers.LonLat(longitude, latitude).transform(
 			new OpenLayers.Projection("EPSG:4326"), 
 			new OpenLayers.Projection("EPSG:900913") 
 		);
-
-		var zoom =  12 ;
 
 		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],

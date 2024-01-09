@@ -85,9 +85,7 @@ Les noisetiers et les pins qui bordent les chemins tracés nous coupent rapideme
 Après quelques kilomètres nous débouchons sur une crête qui nous offre un peu de plat, et que nous suivons un certain temps, jusqu&rsquo;à apercevoir un petit bourg au loin. Le Monastier-sur-Gazeille, pendu ainsi à flanc de colline, éclairé d&rsquo;un rai de lumière qui illumine de part en part les tuiles rondes de ses maisons me donne l&rsquo;impression d&rsquo;apercevoir Sartène en Corse, les oliviers sauvages en moins. C&rsquo;est d&rsquo;ici qu&rsquo;est parti RLS, après avoir acheté son ânesse et s&rsquo;être fait fabriquer sur mesure son sac de couchage en peau de mouton, qui lui servit à transporter son paquetage le jour et à dormir la nuit.</p>
 <p>Notre écrivain écossais préféré écrivait ceci à propos de ce village :
 <blockquote>
-	<p>
-Là, en vérité, vous trouverez de nombreux coins auxquels on prend goût; ce qui fit choisir par un noble anglais le bord du ruisseau de Suisse pour y faire creuser sa tombe, un endroit où la Nature présente l'aspect le plus frais, et paraît aussi jeune qu'au matin du septième jour. Un endroit de ce genre est le cours de la Gazeille, là où elle arrose le pré communal de Monastier et de là descend jusqu'à son confluant avec la Loire; un endroit où écouter chanter les oiseaux; un endroit que les amoureux aiment à fréquenter. Le nom de cette rivière a peut-être été suggéré par le bruit qu'elle fait en coulant sur les cailloux; car c'est une grande chanteuse et la nuit, quand j'étais couché à Monastier, je pouvais l'entendre gazouiller en descendant la vallée jusqu'au moment où je m'endormais.
-</p>
+	<p>Là, en vérité, vous trouverez de nombreux coins auxquels on prend goût; ce qui fit choisir par un noble anglais le bord du ruisseau de Suisse pour y faire creuser sa tombe, un endroit où la Nature présente l&rsquo;aspect le plus frais, et paraît aussi jeune qu&rsquo;au matin du septième jour. Un endroit de ce genre est le cours de la Gazeille, là où elle arrose le pré communal de Monastier et de là descend jusqu&rsquo;à son confluant avec la Loire; un endroit où écouter chanter les oiseaux; un endroit que les amoureux aiment à fréquenter. Le nom de cette rivière a peut-être été suggéré par le bruit qu&rsquo;elle fait en coulant sur les cailloux; car c&rsquo;est une grande chanteuse et la nuit, quand j&rsquo;étais couché à Monastier, je pouvais l&rsquo;entendre gazouiller en descendant la vallée jusqu&rsquo;au moment où je m&rsquo;endormais.</p>
 	<footer>
 		Robert-Louis Stevenson, <cite>Voyage avec un âne dans les cévennes</cite>
 	</footer>
@@ -170,16 +168,26 @@ Là, en vérité, vous trouverez de nombreux coins auxquels on prend goût; ce q
 
 	function init() {
 
-		map = new OpenLayers.Map("map");
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const defaultLongitude = "3.9"
+        const defaultLatitude = "44.949"
+        const defaultZoom =  12 
+        const mobileLongitude =  null 
+        const mobileLatitude =  null 
+        const mobileZoom = "8"
+
+        const longitude = isMobile && mobileLongitude ? mobileLongitude : defaultLongitude;
+        const latitude = isMobile && mobileLatitude ? mobileLatitude : defaultLatitude;
+        const zoom = isMobile && mobileZoom ? mobileZoom : defaultZoom;
+
+		const map = new OpenLayers.Map("map");
 		var mapnik = new OpenLayers.Layer.OSM();
 		map.addLayer(mapnik);
 
-		var lonlat = new OpenLayers.LonLat("3.9", "44.949").transform(
+		var lonlat = new OpenLayers.LonLat(longitude, latitude).transform(
 			new OpenLayers.Projection("EPSG:4326"), 
 			new OpenLayers.Projection("EPSG:900913") 
 		);
-
-		var zoom =  12 ;
 
 		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],

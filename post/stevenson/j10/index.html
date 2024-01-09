@@ -86,14 +86,12 @@ J&rsquo;aurais pu me graver sur ces images. M&rsquo;accouder à un muret de pier
 <p>Je laisse tout cela derrière moi, avec l&rsquo;esprit léger de celui qui a vécu ce qu&rsquo;il y avait à vivre, pour poursuivre ma route vers Florac. Florac et ses 546 mètres d&rsquo;altitude. Beaucoup de dénivelé à venir, dans cette transition vers le début de la plaine. Mais avant cela il faut passer quelques cols, traverser des forêts, suivre des crêtes où le sentier se perd et où il faut jouer les cabris pour enfin se laisser couler le long du relief qui descend vers la sous-préfecture de la Lozère et ses 2000 habitants. Au loin, au nord, à travers quelques trouées dans les arbres, on peut deviner encore les bosses dénudées des monts traversés la veille.</p>
 <p>À pieds par les chemins, les rencontres s&rsquo;en vont s&rsquo;en viennent. Quand elles sont là les kilomètres s&rsquo;amenuisent, la perception du monde change. La trotteuse trotte plus vite en trottant conjointement.</p>
 <blockquote>
-	<p>
-À la compagne de voyage<br />
-Dont les yeux, charmant paysage<br />
-Font paraître court le chemin<br />
-Qu’on est seul, peut-être, à comprendre<br />
-Et qu’on laisse pourtant descendre<br />
-Sans avoir effleuré sa main
-</p>
+	<p>À la compagne de voyage<!-- raw HTML omitted -->
+Dont les yeux, charmant paysage<!-- raw HTML omitted -->
+Font paraître court le chemin<!-- raw HTML omitted -->
+Qu’on est seul, peut-être, à comprendre<!-- raw HTML omitted -->
+Et qu’on laisse pourtant descendre<!-- raw HTML omitted -->
+Sans avoir effleuré sa main</p>
 	<footer>
 		Antoine Pol, <cite>Les passantes</cite>
 	</footer>
@@ -171,16 +169,26 @@ Sans avoir effleuré sa main
 
 	function init() {
 
-		map = new OpenLayers.Map("map");
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const defaultLongitude = "3.69"
+        const defaultLatitude = "44.34"
+        const defaultZoom =  12 
+        const mobileLongitude =  null 
+        const mobileLatitude =  null 
+        const mobileZoom = "8"
+
+        const longitude = isMobile && mobileLongitude ? mobileLongitude : defaultLongitude;
+        const latitude = isMobile && mobileLatitude ? mobileLatitude : defaultLatitude;
+        const zoom = isMobile && mobileZoom ? mobileZoom : defaultZoom;
+
+		const map = new OpenLayers.Map("map");
 		var mapnik = new OpenLayers.Layer.OSM();
 		map.addLayer(mapnik);
 
-		var lonlat = new OpenLayers.LonLat("3.69", "44.34").transform(
+		var lonlat = new OpenLayers.LonLat(longitude, latitude).transform(
 			new OpenLayers.Projection("EPSG:4326"), 
 			new OpenLayers.Projection("EPSG:900913") 
 		);
-
-		var zoom =  12 ;
 
 		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],

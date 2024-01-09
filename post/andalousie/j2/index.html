@@ -95,8 +95,28 @@ Parfois ce sont des champs entier de panneaux solaires que nous laisse découvri
 couleur bleutée pourrait les faire passer pour des champs de lavande.
 Arrivé à destination, mon premier contact avec la ville me met dans de bonnes dispositions. Rapportant au guichet une carte de réduction oubliée par une
 voyageuse dans le train à côté de moi, l&rsquo;employé de la renfe qui ne parle pas bien anglais et qui semble bourru de prime abord m&rsquo;adresse un large sourire
-quand il comprend l&rsquo;objet de ma présence devant lui. Je redécouvre avec joie le pouvoir du sourire, qui plus est quand on est seul dans une ville étrangère inconnue.</p>
-<p>TODO Texte église Concarneau</p>
+quand il comprend l&rsquo;objet de ma présence devant lui. Je redécouvre avec joie le pouvoir du sourire, qui plus est quand on est seul dans une ville étrangère inconnue.
+Et je repense à ce texte découvert par hasard dans une chapelle de Concarneau :</p>
+<blockquote>
+	<p>Un sourire ne coûte rien et produit beaucoup,<br>
+Il enrichit celui qui le reçoit sans appauvrir celui qui le donne,<br>
+Il ne dure qu’un instant, mais son souvenir est parfois éternel.<br>
+Personne n’est assez riche pour s’en passer,<br>
+Personne n’est assez pauvre pour ne pas le mériter,<br>
+Il crée le bonheur au foyer, soutient les affaires,<br>
+Il est le signe sensible de l’amitié.<br>
+Un sourire donne du repos à l’être fatigué,<br>
+Donne du courage au plus découragé.<br>
+Il ne peut ni s’acheter, ni se prêter, ni se voler,<br>
+Car c’est une chose qui n’a de valeur qu’à partir du moment où il se donne.<br>
+Et si toutefois, vous rencontrez quelqu’un qui ne sait plus sourire,<br>
+Soyez généreux donnez-lui le vôtre,<br>
+Car nul n’a autant besoin d’un sourire que celui qui ne peut en donner aux autres.</p>
+	<footer>
+		Raoul Follereau, <cite>Le livre d&#39;Amour</cite>
+	</footer>
+</blockquote>
+
 <p>La seconde chose qui me marque dans cette ville, c&rsquo;est la pierre. On sent le poids des siècles dans les murs même de Salamanca. C&rsquo;est une pierre que je n&rsquo;avais
 jamais vu, qui est marquée, qui porte la patine du temps. Non par l&rsquo;érosion, mais par ses tâches de couleur pareilles à des tâches de vieillesse. De très
 nombreux bâtiments aux quatre coins de la ville sont ainsi marqués. Cette unité donne une signature à la ville qui la rend d&rsquo;autant plus unique.
@@ -135,13 +155,11 @@ ici change positivement quand ils apprennent que je viens de Paris. Il est curie
 <div id="flickr-gallery" data-album-id="72177720313243535"></div>
 
 <blockquote>
-	<p>
-Le formalisme : le signe pour la chose et souvent la chose n'y est plus. Ainsi, plus la politesse devient formelle, moins le cœur y rend de part. Il y a tant à 
-faire à s'acquitter que l'on n'éprouve plus rien. Aussi dans un milieu régi par une étiquette impérieuse, il faut trouver des substituts pour exprimer la sympathie 
-ou l'antipathie qui teintent les rapports sociaux. D'où, au Japon, l'importance de l'&laquo;ambiance&raquo; &mdash; <i>kimochi</i> &mdash; grâce à laquelle la 
-sympathie passe par osmose au-dessus des formes rigides du protocole. D'où l'importance aussi du sourire, dans lequel on peut enfermer ce que l'on veut, et qui 
-n'est pas du tout mécanique, mais exprime une infinité de nuances, de la confiance  la plus entière à la réprobation la plus catégorique.
-</p>
+	<p>Le formalisme : le signe pour la chose et souvent la chose n&rsquo;y est plus. Ainsi, plus la politesse devient formelle, moins le cœur y rend de part. Il y a tant à
+faire à s&rsquo;acquitter que l&rsquo;on n&rsquo;éprouve plus rien. Aussi dans un milieu régi par une étiquette impérieuse, il faut trouver des substituts pour exprimer la sympathie
+ou l&rsquo;antipathie qui teintent les rapports sociaux. D&rsquo;où, au Japon, l&rsquo;importance de l&rsquo;«ambiance» — <!-- raw HTML omitted -->kimochi<!-- raw HTML omitted --> — grâce à laquelle la
+sympathie passe par osmose au-dessus des formes rigides du protocole. D&rsquo;où l&rsquo;importance aussi du sourire, dans lequel on peut enfermer ce que l&rsquo;on veut, et qui
+n&rsquo;est pas du tout mécanique, mais exprime une infinité de nuances, de la confiance  la plus entière à la réprobation la plus catégorique.</p>
 	<footer>
 		Nicolas Bouvier, <cite>Le vide et le plein</cite>
 	</footer>
@@ -213,16 +231,26 @@ n'est pas du tout mécanique, mais exprime une infinité de nuances, de la confi
 
 	function init() {
 
-		map = new OpenLayers.Map("map");
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const defaultLongitude = "-3.5"
+        const defaultLatitude = "42.2"
+        const defaultZoom =  7 
+        const mobileLongitude =  null 
+        const mobileLatitude =  null 
+        const mobileZoom =  6 
+
+        const longitude = isMobile && mobileLongitude ? mobileLongitude : defaultLongitude;
+        const latitude = isMobile && mobileLatitude ? mobileLatitude : defaultLatitude;
+        const zoom = isMobile && mobileZoom ? mobileZoom : defaultZoom;
+
+		const map = new OpenLayers.Map("map");
 		var mapnik = new OpenLayers.Layer.OSM();
 		map.addLayer(mapnik);
 
-		var lonlat = new OpenLayers.LonLat("-3.5", "42.2").transform(
+		var lonlat = new OpenLayers.LonLat(longitude, latitude).transform(
 			new OpenLayers.Projection("EPSG:4326"), 
 			new OpenLayers.Projection("EPSG:900913") 
 		);
-
-		var zoom =  7 ;
 
 		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],

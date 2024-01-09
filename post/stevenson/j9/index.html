@@ -84,9 +84,7 @@
 <p>Plein nord on devine les montagnes traversées depuis le début du trajet, mais le Puy et ses collines ne sont plus visibles depuis longtemps. On se rend compte de la puissance du corps humain dans un monde où le déplacement n&rsquo;est plus que motorisé. Nos jambes seules peuvent nous porter par monts et par vaux. Elles sont faites pour ça. Quelle était cette vie où la marche était la norme ? Il y a quelques siècles ou même bien avant, quand la sédentarité n&rsquo;était pas encore de mode. C&rsquo;est une façon d&rsquo;aborder le monde à une échelle à la fois bien plus restreinte et bien plus vaste que nous. Ce besoin de se repérer pour se mouvoir sur son territoire ou cette capacité à anticiper par l&rsquo;observation de la nature les ressources naturelles. C&rsquo;est un vertige qui me prend devant cette perception de l&rsquo;espace disparue, cette connaissance à jamais perdue, que plus aucun être humain ne pourra un jour ressentir, si ce n&rsquo;est quelques enfants loups ou ces rares indigènes vivants encore dans des forêts reculées. Je sens tout cela m&rsquo;échapper alors même que je viens de découvrir cette façon de vivre.</p>
 <p>RLS passe deux nuits à la belle étoile dans cette région, et il évoque lui aussi quelques impressions sur la civilisation dont il se sent à chaque pas un peu plus éloigné.</p>
 <blockquote>
-	<p>
-Une brise molle, ressemblant davantage à une fraîcheur mouvante qu’à une poussée de vent balayait de haut en bas, par instants, la clairière. En sorte que dans ma vaste chambre l’air se renouvelait la nuit entière. Je pensai avec dégoût à l’auberge de Chasseradès et aux bonnets de coton rassemblés, avec dégoût aux équipées nocturnes des employés et des étudiants, aux théâtres surchauffés, aux passe-partout et aux chambres closes. Je n’avais pas souvent éprouvé plus sereine possession de moi-même, ni senti plus d’indépendance à l’endroit des contingences matérielles. Le monde extérieur de qui nous nous défendons dans nos demeures semblait somme toute un endroit délicieusement habitable. Chaque nuit, un lit y était préparé, eût-on dit, pour attendre l’homme dans les champs où Dieu tient maison ouverte. Je songeais que j’avais redécouvert une de ces vérités qui sont révélées aux sauvages et qui se dérobent aux économistes. Du moins, avais-je découvert pour moi une volupté nouvelle. Et pourtant, alors même que je m’exaltais dans ma solitude, je pris conscience d’un manque singulier. Je souhaitais une compagne qui s’allongerait près de moi au clair des étoiles, silencieuse et immobile, mais dont la main ne cesserait de toucher la mienne. Car il existe une camaraderie plus reposante même que la solitude et qui, bien comprise, est la solitude portée à son point de perfection. Et vivre à la belle étoile avec la femme que l’on aime est de toutes les vies la plus totale et la plus libre.
-</p>
+	<p>Une brise molle, ressemblant davantage à une fraîcheur mouvante qu’à une poussée de vent balayait de haut en bas, par instants, la clairière. En sorte que dans ma vaste chambre l’air se renouvelait la nuit entière. Je pensai avec dégoût à l’auberge de Chasseradès et aux bonnets de coton rassemblés, avec dégoût aux équipées nocturnes des employés et des étudiants, aux théâtres surchauffés, aux passe-partout et aux chambres closes. Je n’avais pas souvent éprouvé plus sereine possession de moi-même, ni senti plus d’indépendance à l’endroit des contingences matérielles. Le monde extérieur de qui nous nous défendons dans nos demeures semblait somme toute un endroit délicieusement habitable. Chaque nuit, un lit y était préparé, eût-on dit, pour attendre l’homme dans les champs où Dieu tient maison ouverte. Je songeais que j’avais redécouvert une de ces vérités qui sont révélées aux sauvages et qui se dérobent aux économistes. Du moins, avais-je découvert pour moi une volupté nouvelle. Et pourtant, alors même que je m’exaltais dans ma solitude, je pris conscience d’un manque singulier. Je souhaitais une compagne qui s’allongerait près de moi au clair des étoiles, silencieuse et immobile, mais dont la main ne cesserait de toucher la mienne. Car il existe une camaraderie plus reposante même que la solitude et qui, bien comprise, est la solitude portée à son point de perfection. Et vivre à la belle étoile avec la femme que l’on aime est de toutes les vies la plus totale et la plus libre.</p>
 	<footer>
 		Robert-Louis Stevenson, <cite>Voyage avec un âne dans les cévennes</cite>
 	</footer>
@@ -168,16 +166,26 @@ Et soudain, en passant le faîte d&rsquo;une colline tout aussi anodine que les 
 
 	function init() {
 
-		map = new OpenLayers.Map("map");
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const defaultLongitude = "3.79"
+        const defaultLatitude = "44.43"
+        const defaultZoom =  11 
+        const mobileLongitude =  null 
+        const mobileLatitude =  null 
+        const mobileZoom = "8"
+
+        const longitude = isMobile && mobileLongitude ? mobileLongitude : defaultLongitude;
+        const latitude = isMobile && mobileLatitude ? mobileLatitude : defaultLatitude;
+        const zoom = isMobile && mobileZoom ? mobileZoom : defaultZoom;
+
+		const map = new OpenLayers.Map("map");
 		var mapnik = new OpenLayers.Layer.OSM();
 		map.addLayer(mapnik);
 
-		var lonlat = new OpenLayers.LonLat("3.79", "44.43").transform(
+		var lonlat = new OpenLayers.LonLat(longitude, latitude).transform(
 			new OpenLayers.Projection("EPSG:4326"), 
 			new OpenLayers.Projection("EPSG:900913") 
 		);
-
-		var zoom =  11 ;
 
 		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],

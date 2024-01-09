@@ -80,9 +80,7 @@
 						</p>
 					</header>
 					<blockquote>
-	<p>
-Je ne suis pas un de ces voyageurs qui s'enthousiasment à froid, qui admirent là où leur guide leur dit d'admirer, ou qui feignent d'avoir eu, devant des hommes et des localités recommandés d'avance à leur admiration, des sentiments absents de leur cœur; non, j'ai dépouillé mes sensations, je les ai mises à nu pour les présenter à ceux qui me lisent; ce que j'ai éprouvé, je l'ai raconté faiblement peut-être, mais je n'ai pas raconté autre chose que ce que j'avais éprouvé.
-</p>
+	<p>Je ne suis pas un de ces voyageurs qui s&rsquo;enthousiasment à froid, qui admirent là où leur guide leur dit d&rsquo;admirer, ou qui feignent d&rsquo;avoir eu, devant des hommes et des localités recommandés d&rsquo;avance à leur admiration, des sentiments absents de leur cœur; non, j&rsquo;ai dépouillé mes sensations, je les ai mises à nu pour les présenter à ceux qui me lisent; ce que j&rsquo;ai éprouvé, je l&rsquo;ai raconté faiblement peut-être, mais je n&rsquo;ai pas raconté autre chose que ce que j&rsquo;avais éprouvé.</p>
 	<footer>
 		Alexandre Dumas, <cite>Impressions du midi de la France</cite>
 	</footer>
@@ -170,16 +168,26 @@ Nos hôtes sont heureusement des plus agréables et nous nous restaurons copieus
 
 	function init() {
 
-		map = new OpenLayers.Map("map");
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const defaultLongitude = "3.9"
+        const defaultLatitude = "45.02"
+        const defaultZoom =  13 
+        const mobileLongitude =  null 
+        const mobileLatitude =  null 
+        const mobileZoom = "8"
+
+        const longitude = isMobile && mobileLongitude ? mobileLongitude : defaultLongitude;
+        const latitude = isMobile && mobileLatitude ? mobileLatitude : defaultLatitude;
+        const zoom = isMobile && mobileZoom ? mobileZoom : defaultZoom;
+
+		const map = new OpenLayers.Map("map");
 		var mapnik = new OpenLayers.Layer.OSM();
 		map.addLayer(mapnik);
 
-		var lonlat = new OpenLayers.LonLat("3.9", "45.02").transform(
+		var lonlat = new OpenLayers.LonLat(longitude, latitude).transform(
 			new OpenLayers.Projection("EPSG:4326"), 
 			new OpenLayers.Projection("EPSG:900913") 
 		);
-
-		var zoom =  13 ;
 
 		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],

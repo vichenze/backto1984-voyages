@@ -82,9 +82,7 @@
 					<p>Face à l&rsquo;inconnu des chemins à venir et des distances à parcourir, la raison nous a conduit à raccourcir l&rsquo;étape aujourd&rsquo;hui. Pas de Boucher-Saint-Nicolas. Pas de lac. C&rsquo;est qu&rsquo;il fut difficile de trouver un hébergement sur cette partie du chemin. Nous nous réconfortons en nous disant que RLS aussi aura raté le lac. Son souhait était pourtant de camper sur les bords du lac, car comme à nous, on lui en avait vanté les beautés. Mais s&rsquo;étant fait surprendre par la nuit trop loin de sa destination, il demanda son chemin à une mère et son fils qui passaient là. Il dû insister longtemps, allant à les presser même physiquement, pour que finalement la mère concède à ce qu&rsquo;il les suive dans ce qu&rsquo;il pensait être la direction du lac, quand une heure plus tard il se retrouva au  village du Boucher, à plusieurs kilomètres du lac.</p>
 <p>Le soleil encore bas sur l&rsquo;horizon, nous arrivons au devant de Goudet et plongeons vers ce petit village, dans l&rsquo;ombre des gorges de la Loire, que nous traversons à nouveau. Elle n&rsquo;a ici que l&rsquo;apparence d&rsquo;une vulgaire rivière, qui pourrait se traverser à gué sans avoir à se mouiller les genoux.</p>
 <blockquote>
-	<p>
-D’au-dessus et d’en dessous, on peut l’entendre qui sinue parmi les pierres, aimable jouvenceau de fleuve qu’il semble absurde d’appeler la Loire. De toutes parts, Goudet est encerclé par des montagnes ; des sentes rocailleuses, praticables au mieux par des ânes, rattachent la localité au reste de la France. Et hommes et femmes y boivent et sacrent dans leur coin de verdure où, du seuil de leurs demeures, lèvent les yeux, l’hiver, vers les pics ceints de neiges, dans un isolement qu’on jurerait pareil à celui des Cyclopes homériques.
-</p>
+	<p>D’au-dessus et d’en dessous, on peut l’entendre qui sinue parmi les pierres, aimable jouvenceau de fleuve qu’il semble absurde d’appeler la Loire. De toutes parts, Goudet est encerclé par des montagnes ; des sentes rocailleuses, praticables au mieux par des ânes, rattachent la localité au reste de la France. Et hommes et femmes y boivent et sacrent dans leur coin de verdure où, du seuil de leurs demeures, lèvent les yeux, l’hiver, vers les pics ceints de neiges, dans un isolement qu’on jurerait pareil à celui des Cyclopes homériques.</p>
 	<footer>
 		Robert-Louis Stevenson, <cite>Voyage avec un âne dans les cévennes</cite>
 	</footer>
@@ -96,9 +94,7 @@ Nous avons la chance aujourd&rsquo;hui encore d&rsquo;avoir une belle diversité
 Et pourtant, l&rsquo;architecture nous laisse à imaginer un certain dynamisme que la vie moderne à fait fuir. Que ce soit par cette église romane remarquable aux cloches apparentes ou par certaines bâtisses magnifiques en pierre de taille dont l&rsquo;arche de l&rsquo;enceinte est surmontée de la date de construction : 1812. Je me prends à rêver à cette vie là, isolé, en autarcie, à vivre plusieurs mois de l&rsquo;année sous la neige sans plus voir le soleil.</p>
 <p>En route vers notre auberge du jour, je repense à la description de RLS concernant l&rsquo;auberge dans laquelle il est contraint de dormir au Boucher-Saint-Nicolas justement.</p>
 <blockquote>
-	<p>
-L’auberge du Bouchet-Saint-Nicolas était des moins prétentieuses que j’aie jamais visitées, mais j’en vis beaucoup plus de ce genre durant mon voyage. Elle était, en effet, typique de ces montagnes françaises. Qu’on imagine une maison campagnarde à deux étages avec un banc devant la porte, la cuisine et l’étable contiguës, de sorte que Modestine et moi pouvions nous entendre dîner réciproquement. Ameublement des plus sommaires, sol de terre battue, un dortoir unique pour les voyageurs et sans autre commodité que des lits. Dans la cuisine, cuisson et manger vont de pair et la famille y dort la nuit. Quiconque a la fantaisie de faire sa toilette doit y procéder en public à la table commune. La nourriture est parfois frugale : du poisson sec et une omelette ont constitué en plus d’un cas mon menu. Le vin y est des plus médiocres, l’eau-de-vie abominable. Et la visite d’une énorme truie grognant sous la table et se frottant à vos jambes n’est pas un impossible accompagnement du repas.
-</p>
+	<p>L’auberge du Bouchet-Saint-Nicolas était des moins prétentieuses que j’aie jamais visitées, mais j’en vis beaucoup plus de ce genre durant mon voyage. Elle était, en effet, typique de ces montagnes françaises. Qu’on imagine une maison campagnarde à deux étages avec un banc devant la porte, la cuisine et l’étable contiguës, de sorte que Modestine et moi pouvions nous entendre dîner réciproquement. Ameublement des plus sommaires, sol de terre battue, un dortoir unique pour les voyageurs et sans autre commodité que des lits. Dans la cuisine, cuisson et manger vont de pair et la famille y dort la nuit. Quiconque a la fantaisie de faire sa toilette doit y procéder en public à la table commune. La nourriture est parfois frugale : du poisson sec et une omelette ont constitué en plus d’un cas mon menu. Le vin y est des plus médiocres, l’eau-de-vie abominable. Et la visite d’une énorme truie grognant sous la table et se frottant à vos jambes n’est pas un impossible accompagnement du repas.</p>
 	<footer>
 		Robert-Louis Stevenson, <cite>Voyage avec un âne dans les cévennes</cite>
 	</footer>
@@ -182,16 +178,26 @@ Nous l&rsquo;avions deviné aux camping-car et aux plaques d&rsquo;immatriculati
 
 	function init() {
 
-		map = new OpenLayers.Map("map");
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        const defaultLongitude = "3.9"
+        const defaultLatitude = "44.86"
+        const defaultZoom =  12 
+        const mobileLongitude =  null 
+        const mobileLatitude =  null 
+        const mobileZoom = "8"
+
+        const longitude = isMobile && mobileLongitude ? mobileLongitude : defaultLongitude;
+        const latitude = isMobile && mobileLatitude ? mobileLatitude : defaultLatitude;
+        const zoom = isMobile && mobileZoom ? mobileZoom : defaultZoom;
+
+		const map = new OpenLayers.Map("map");
 		var mapnik = new OpenLayers.Layer.OSM();
 		map.addLayer(mapnik);
 
-		var lonlat = new OpenLayers.LonLat("3.9", "44.86").transform(
+		var lonlat = new OpenLayers.LonLat(longitude, latitude).transform(
 			new OpenLayers.Projection("EPSG:4326"), 
 			new OpenLayers.Projection("EPSG:900913") 
 		);
-
-		var zoom =  12 ;
 
 		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],
