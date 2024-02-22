@@ -9,11 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Categories</title>
+    <title>Retour au nord</title>
 
-    
-    <link href="http://voyages.backto1984.com/categories/index.xml" rel="alternate" type="application/rss+xml" title="Back to 1984 — Voyages" />
-    <link href="http://voyages.backto1984.com/categories/index.xml" rel="feed" type="application/rss+xml" title="Back to 1984 — Voyages" />
     
 
     
@@ -56,46 +53,73 @@
     </nav>
 
 
-    
-    <header class="intro-header" style="background-image: url('http://voyages.backto1984.com/img/home-bg.jpg')">
-     <div class="container">
-       <div class="row">
-         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-           <div class="site-heading">
-             <h1>Categories</h1>
-             <hr class="small">
-             <span class="subheading">Categories</span>
-           </div>
-         </div>
-       </div>
-     </div>
-    </header>
+	<div class="map" id="map"></div>
 
-    
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <ul>
-            
-            
-            <li><a href="/categories/de-brest-%C3%A0-%C3%A9dimbourg">De-Brest-À-Édimbourg</a> 18</li>
-            
-            <li><a href="/categories/andalousie">Andalousie</a> 15</li>
-            
-            <li><a href="/categories/carnet-de-voyage-en-islande">Carnet-De-Voyage-en-Islande</a> 13</li>
-            
-            <li><a href="/categories/journal-de-bord-transatlantique">Journal-De-Bord-Transatlantique</a> 13</li>
-            
-            <li><a href="/categories/sur-les-traces-de-robert-louis-stevenson">Sur-Les-Traces-De-Robert-Louis-Stevenson</a> 13</li>
-            
-            <li><a href="/categories/la-corse-puis-le-belem">La-Corse-Puis-Le-Belem</a> 12</li>
-            
-            <li><a href="/categories/la-mer-baltique-sur-le-belem">La-Mer-Baltique-Sur-Le-Belem</a> 11</li>
-            
-          </ul>
-        </div>
-      </div>
-    </div>
+	<article>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					<header>
+						<h1>Retour au nord</h1>
+						<h2 class="subheading"></h2>
+						<span class="meta">
+							
+<a href="/categories/andalousie">Andalousie</a>
+
+<br />
+20 octobre 2023
+
+						</span>
+						<p>
+							<strong>Parcours</strong> : València - Barcelona<br />
+							<strong>Distance</strong> : 364km
+								
+							<br />
+						</p>
+					</header>
+					<p>Je trouve toujours aussi curieux que dans ce pays de l&rsquo;orange, on serve dans les petits déjeuners low cost du jus d&rsquo;orange extrêmement
+chimique et imbuvable alors qu&rsquo;il y a des oranges fraîches dans n&rsquo;importe quel bar au coin de la rue.</p>
+<p>C&rsquo;est aujourd&rsquo;hui le retour dans une très grande ville, Barcelone, qui comparativement aux villes que je traverse depuis deux semaines
+a des allures de villes d&rsquo;Europe beaucoup plus septentrionales. Son métro, ses magasins de luxe, ses rues passantes où des milliers
+de monde s&rsquo;entrecroisent dans une ignorance mutuelle. La douceur valencienne n&rsquo;est plus, les ficus géants non plus. Toutes ces
+précédentes étapes semblent bien loin. À être sans cesse en mouvement, à reconstruire un environnement chaque jour, à bouleverser des
+repères à peine pris, il me semble être parti des semaines. Le temps passe plus vite dans un état d&rsquo;éveil constant, de recherche,
+de découverte, de compréhension du monde.</p>
+<h4>
+    Photos<br />
+    <small>(cliquez pour agrandir)</small>
+</h4>
+<div id="flickr-gallery" data-album-id="72177720313586061"></div>
+
+
+				</div>
+			</div>
+			
+
+
+<footer>
+	<nav class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					
+						<a href="http://voyages.backto1984.com/post/andalousie/j13/">&laquo;&laquo; Des gares et des trains</a>
+					
+
+				</div>
+
+				<div class="col-lg-6 col-md-12 text-right">
+					
+						<a href="http://voyages.backto1984.com/post/andalousie/j15/">L&#39;immobile existence &raquo;&raquo;</a>
+					
+				</div>
+			</div>
+		</div>
+	</nav>
+</footer>
+
+		</div>
+	</article>
 
 		<hr>
 		
@@ -138,12 +162,12 @@
 	function init() {
 
         const isMobile = window.matchMedia("(max-width: 768px)").matches;
-        const defaultLongitude =  null 
-        const defaultLatitude =  null 
-        const defaultZoom = "8"
+        const defaultLongitude = "0"
+        const defaultLatitude = "40.6"
+        const defaultZoom =  7 
         const mobileLongitude =  null 
         const mobileLatitude =  null 
-        const mobileZoom = "8"
+        const mobileZoom =  6 
 
         const longitude = isMobile && mobileLongitude ? mobileLongitude : defaultLongitude;
         const latitude = isMobile && mobileLatitude ? mobileLatitude : defaultLatitude;
@@ -161,7 +185,7 @@
 		var lgpx = new OpenLayers.Layer.Vector("Tracé du jour", {
 			strategies: [new OpenLayers.Strategy.Fixed()],
 			protocol: new OpenLayers.Protocol.HTTP({
-				url: "",
+				url: "\/gpx\/andalousie\/j14.gpx",
 				format: new OpenLayers.Format.GPX()
 			}),
 			style: {strokeColor: "blue", strokeWidth: 5, strokeOpacity: 0.5},
