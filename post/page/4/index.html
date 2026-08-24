@@ -123,13 +123,13 @@
     <span aria-hidden="true">&nbsp;&hellip;&nbsp;</span>
   </li>
   <li class="page-item">
-    <a class="page-link" href="/post/page/10/">10</a>
+    <a class="page-link" href="/post/page/11/">11</a>
   </li>
   <li class="page-item">
     <a href="/post/page/5/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
   </li>
   <li class="page-item">
-    <a href="/post/page/10/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    <a href="/post/page/11/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
   </li>
 </ul>
 
@@ -191,7 +191,16 @@
         const zoom = isMobile && mobileZoom ? mobileZoom : defaultZoom;
 
 		const map = new OpenLayers.Map("map");
-		var mapnik = new OpenLayers.Layer.OSM();
+        
+		var mapnik = new OpenLayers.Layer.OSM(
+            "OpenStreetMap",
+            [
+                "https://a.tile.openstreetmap.org/${z}/${x}/${y}.png",
+                "https://b.tile.openstreetmap.org/${z}/${x}/${y}.png",
+                "https://c.tile.openstreetmap.org/${z}/${x}/${y}.png"
+            ]
+        );
+        map.addLayer(mapnik);
 		map.addLayer(mapnik);
 
 		var lonlat = new OpenLayers.LonLat(longitude, latitude).transform(

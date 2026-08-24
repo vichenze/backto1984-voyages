@@ -245,7 +245,16 @@ Les matelots effectuent des quarts réguliers, 4 heures toutes les 8 heures, ils
         const zoom = isMobile && mobileZoom ? mobileZoom : defaultZoom;
 
 		const map = new OpenLayers.Map("map");
-		var mapnik = new OpenLayers.Layer.OSM();
+        
+		var mapnik = new OpenLayers.Layer.OSM(
+            "OpenStreetMap",
+            [
+                "https://a.tile.openstreetmap.org/${z}/${x}/${y}.png",
+                "https://b.tile.openstreetmap.org/${z}/${x}/${y}.png",
+                "https://c.tile.openstreetmap.org/${z}/${x}/${y}.png"
+            ]
+        );
+        map.addLayer(mapnik);
 		map.addLayer(mapnik);
 
 		var lonlat = new OpenLayers.LonLat(longitude, latitude).transform(

@@ -82,6 +82,8 @@
             
             <li><a href="/categories/andalousie">Andalousie</a> 15</li>
             
+            <li><a href="/categories/%C3%AEles-anglo-normandes">Îles-Anglo-Normandes</a> 15</li>
+            
             <li><a href="/categories/carnet-de-voyage-en-islande">Carnet-De-Voyage-en-Islande</a> 13</li>
             
             <li><a href="/categories/journal-de-bord-transatlantique">Journal-De-Bord-Transatlantique</a> 13</li>
@@ -150,7 +152,16 @@
         const zoom = isMobile && mobileZoom ? mobileZoom : defaultZoom;
 
 		const map = new OpenLayers.Map("map");
-		var mapnik = new OpenLayers.Layer.OSM();
+        
+		var mapnik = new OpenLayers.Layer.OSM(
+            "OpenStreetMap",
+            [
+                "https://a.tile.openstreetmap.org/${z}/${x}/${y}.png",
+                "https://b.tile.openstreetmap.org/${z}/${x}/${y}.png",
+                "https://c.tile.openstreetmap.org/${z}/${x}/${y}.png"
+            ]
+        );
+        map.addLayer(mapnik);
 		map.addLayer(mapnik);
 
 		var lonlat = new OpenLayers.LonLat(longitude, latitude).transform(
