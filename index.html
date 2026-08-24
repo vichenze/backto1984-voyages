@@ -112,6 +112,11 @@
                             <a href="/categories/sur-les-traces-de-robert-louis-stevenson"><h2>Sur les traces de robert louis stevenson</h2></a>
                         </li>
                     
+                        <li class="img-container">
+                            <div class="img" style="background-image: url('/images/cat/small/%c3%aeles-anglo-normandes.jpg')"></div>
+                            <a href="/categories/%c3%aeles-anglo-normandes"><h2>Îles anglo normandes</h2></a>
+                        </li>
+                    
                 
                     
                 
@@ -182,7 +187,16 @@
         const zoom = isMobile && mobileZoom ? mobileZoom : defaultZoom;
 
 		const map = new OpenLayers.Map("map");
-		var mapnik = new OpenLayers.Layer.OSM();
+        
+		var mapnik = new OpenLayers.Layer.OSM(
+            "OpenStreetMap",
+            [
+                "https://a.tile.openstreetmap.org/${z}/${x}/${y}.png",
+                "https://b.tile.openstreetmap.org/${z}/${x}/${y}.png",
+                "https://c.tile.openstreetmap.org/${z}/${x}/${y}.png"
+            ]
+        );
+        map.addLayer(mapnik);
 		map.addLayer(mapnik);
 
 		var lonlat = new OpenLayers.LonLat(longitude, latitude).transform(
